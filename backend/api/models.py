@@ -33,6 +33,11 @@ class Item(models.Model):
   motherSurname = models.CharField(max_length=50, null=True)
   motherFirstName = models.CharField(max_length=50,null=True)
   motherMiddleName = models.CharField(max_length=50, null=True)
+
+  elementary = models.CharField(max_length=50, null= True)
+  secondary = models.CharField(max_length=50, null= True)
+  vocational = models.CharField(max_length=50, null=True)
+  college = models.CharField(max_length=50, null=True)
   #description = models.TextField()
 
   def __str__(self):

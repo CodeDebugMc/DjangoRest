@@ -34,6 +34,11 @@ const ItemForm = ({item, onSuccess}) =>
   const [motherSurname, setMoSurname] = useState ('');
   const [motherFirstName, setMoFirstName] = useState ('');
   const [motherMiddleName, setMoMiddleName] = useState ('');
+  
+  const [elementary, setElementary] = useState ('');
+  const [secondary, setSecondary] = useState ('');
+  const [vocational, setVocational] = useState ('');
+  const [college, setCollege] = useState ('');
   //const [description, setDescription] = useState('');
 
   useEffect(() => {
@@ -71,6 +76,11 @@ const ItemForm = ({item, onSuccess}) =>
         setMoSurname(item.motherSurname);
         setMoFirstName(item.motherFirstName);
         setMoMiddleName(item.motherMiddleName);
+
+        setElementary(item.elementary);
+        setSecondary(item.secondary);
+        setVocational(item.vocational);
+        setCollege(item.college);
         //setDescription(item.description);
       }
   }, [item]);
@@ -78,7 +88,7 @@ const ItemForm = ({item, onSuccess}) =>
     event.preventDefault();
     const data = {first_name, last_name, middle_name, address, email, phone, zipcode, birthday, telephone, 
       civilStatus, heightM, weightKg, bloodType, gsisIdNo, pagIbigIdNo, SSS_No, TIN_No, agencyEmployeeNo, citizenship,
-    fatherFirstName, fatherSurName, fatherMiddleName, motherSurname, motherFirstName, motherMiddleName};
+    fatherFirstName, fatherSurName, fatherMiddleName, motherSurname, motherFirstName, motherMiddleName, elementary, secondary, vocational,college};
     try{
       if (item){
         await
@@ -224,7 +234,25 @@ const ItemForm = ({item, onSuccess}) =>
         <input type='text' value={motherMiddleName} onChange={(e) => setMoMiddleName(e.target.value)}/>
       </div>
 
+      <div>
+        <label>Elementary:</label>
+        <input type='text' value={elementary} onChange={(e) => setElementary(e.target.value)}/>
+      </div>
 
+      <div>
+        <label>Secondary:</label>
+        <input type='text' value={secondary} onChange={(e) => setSecondary(e.target.value)}/>
+      </div>
+
+      <div>
+        <label>Vocational:</label>
+        <input type='text' value={vocational} onChange={(e) => setVocational(e.target.value)}/>
+      </div>
+
+      <div>
+        <label>College:</label>
+        <input type='text' value={college} onChange={(e) => setCollege(e.target.value)}/>
+      </div>
 
 
 

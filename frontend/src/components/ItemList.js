@@ -55,6 +55,11 @@ const ItemList = ({onEdit, onDelete}) => {
             {item.motherFirstName}
             {item.motherMiddleName}
 
+            {item.elementary}
+            {item.secondary}
+            {item.vocational}
+            {item.college}
+
             <button onClick={() => onEdit(item)}>Edit</button>
             <button onClick={() => onDelete(item.id)}>Delete</button>
           </li>
